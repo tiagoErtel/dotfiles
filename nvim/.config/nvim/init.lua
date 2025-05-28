@@ -1,2 +1,14 @@
 -- bootstrap lazy.nvim, LazyVim and your plugins
 require("config.lazy")
+
+require("catppuccin").setup({
+    flavour = "mocha",
+})
+
+vim.cmd.colorscheme("catppuccin")
+
+-- Treat .jte files as HTML
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = "*.jte",
+    command = "set filetype=html",
+})
