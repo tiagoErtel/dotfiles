@@ -1,63 +1,45 @@
 {
+    "layer": "top",
     "position": "top",
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "pulseaudio", "cpu", "memory", "temperature", "battery"],
-
+    "modules-right": ["cpu", "temperature", "memory", "pulseaudio", "network", "battery"],
     "clock": {
-        "format": "{:%a %d %H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "on-click": "gnome-calendar"
+        "format": "{:%H:%M}"
     },
-
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}  {capacity}%",
-        "format-warning": "{icon}  {capacity}%",
-        "format-critical": "{icon}  {capacity}%",
-        "format-charging": "  {capacity}%",
-        "format-plugged": "  {capacity}%",
-        "format-alt": "{icon}  {time}",
-        "format-full": "   {capacity}%",
-        "format-icons": ["", "", "", "", ""],
-        "tooltip-format": "{time}"
+    "cpu": {
+        "format": "  {usage}%",
+        "tooltip": true,
+        "interval": 5
     },
-
-    "network": {
-        "format-wifi": "   {essid}",
-        "format-ethernet": "󰤭   Disconnected",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "  Disconnected",
-        "tooltip-format-wifi": "Signal Strength: {signalStrength}%"
+    "memory": {
+        "format": "  {percentage}%",
+        "tooltip": true,
+        "tooltip-format": "{used:0.1f}G / {total:0.1f}G ({percentage}%)",
+        "interval": 5
     },
-
+    "temperature": {
+        "critical-threshold": 80,
+        "format": " {temperatureC}°C"
+    },
     "pulseaudio": {
-        "format": "{icon}   {volume}%",
-        "format-muted": "",
+        "format": "{icon}  {volume}%",
+        "format-muted": "󰝟 Wyciszono",
         "format-icons": {
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
     },
-
-    "cpu": {
-        "format": "   {usage}%",
-        "tooltip": true
+    "network": {
+        "format-wifi": " ",
+        "format-ethernet": " ",
+        "format-disconnected": "󰖪 Off",
+        "tooltip-format": "{essid}",
+        "on-click": "nm-connection-editor"
     },
-
-    "memory": {
-        "format": "  {used:0.1f}G/{total:0.1f}G",
-        "tooltip": true
-    },
-
-    "temperature": {
-        "critical-threshold": 80,
-        "format": "  {temperatureC}°C",
-        "format-critical": "  {temperatureC}°C",
-        "tooltip": true
+    "battery": {
+        "format": "{capacity}% ",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% "
     }
 }
 
