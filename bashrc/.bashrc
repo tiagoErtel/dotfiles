@@ -2,7 +2,7 @@
 # ~/.bashrc
 #
 
-fortune | cowsay
+fortune | cowsay -r
 
 eval "$(starship init bash)"
 
