@@ -1,3 +1,7 @@
-@define-color background #000000;
-@define-color background-light #1c1c1c;
-@define-color text #ffffff;
+@define-color background        #000000;
+@define-color background-light  #1c1c1c;
+@define-color background-hover  #2a2a2a;
+@define-color border            #333333;
+@define-color text              #ffffff;
+@define-color text-muted        #bbbbbb;
+
