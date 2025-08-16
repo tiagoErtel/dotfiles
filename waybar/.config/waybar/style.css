@@ -25,7 +25,7 @@
 
 /* Hover effects for all modules */
 #workspaces:hover, #clock:hover, #cpu:hover, #memory:hover, 
-#temperature:hover, #battery:hover, #backlight:hover, #pulseaudio:hover, #network:hover {
+#temperature:hover, #battery:hover,  #pulseaudio:hover, #backlight:hover, #network:hover {
     background-color: @background-hover;
     border-color: @text-muted;
 }
